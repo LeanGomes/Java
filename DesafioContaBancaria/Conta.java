@@ -41,8 +41,13 @@ public class Conta {
 			} else if(opcao == 3) {
 				System.out.println("Digite o valor a ser transferido.");
 				double valorTransferido = scanner.nextDouble();
-				saldo -= valorTransferido;
-				System.out.println("Saldo atualizado: " + saldo);
+				if(valorTransferido > saldo) {
+					System.out.println("Saldo insuficiente!!!");
+					System.out.println("Saldo atual: " + saldo);
+				}else {
+					saldo -= valorTransferido;
+					System.out.println("Saldo atualizado: " + saldo);
+				}
 			}else if (opcao == 4) {
 				System.out.println("Operação encerrada!");
 				break;
